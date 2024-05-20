@@ -1,16 +1,25 @@
-### Hi there 👋
+# Hi there! 👋 I'm Mamadou KEITA
 
-<!--
-**Mamadou-Keita/Mamadou-Keita** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+I'm a PhD student at Université Polytechnique Hauts de France, specializing in Malicious Actors Profiling on Online Social Networks using Multimodal Deep Learning. My research interests include:
 
-Here are some ideas to get you started:
+- 💻 Deep learning
+- 🌐 Social network analysis
+- 📝 Natural language processing
+- 👁️ Computer vision
+- 🕵️ Deepfake detection
+- 📷 Image quality assessment
+- 🐾 Animal behavior analysis
+- 🩺 Medical imaging
+- 📊 Data analysis
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+## 🌱 Skills
+- 🐍 Python
+- 🧠 TensorFlow
+- 🔥 PyTorch
+- 🔗 Network analysis
+
+## 📫 Connect with me
+- LinkedIn
+- Email: mohkeita9527@gmail.com
+
+Feel free to explore my repositories and connect with me! 😊🚀
