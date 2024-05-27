@@ -34,7 +34,7 @@ I'm a PhD student at Université Polytechnique Hauts de France, specializing in 
 ![Cisco](https://img.shields.io/badge/cisco-%23049fd9.svg?style=for-the-badge&logo=cisco&logoColor=black)
 
 # 📫 Connect with me
-- LinkedIn: [Mamadou KEITA](https:linkedin.com/in/mamadou-keita98)
+- LinkedIn: [Mamadou KEITA](https://linkedin.com/in/mamadou-keita98)
 - Email: mohkeita9527@gmail.com
 - Google Scholar: [Mamadou KEITA](https://scholar.google.com/citations?user=7D_aALIAAAAJ&hl=en)
 
