@@ -35,7 +35,6 @@ I'm a PhD student at Université Polytechnique Hauts de France, specializing in 
 
 # 📫 Connect with me
 - LinkedIn: [Mamadou KEITA](https://linkedin.com/in/mamadou-keita98)
-- Email: mohkeita9527@gmail.com
 - Google Scholar: [Mamadou KEITA](https://scholar.google.com/citations?user=7D_aALIAAAAJ&hl=en)
 
 Feel free to explore my repositories and connect with me! 😊🚀
