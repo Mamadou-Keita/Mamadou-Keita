@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mamadou KEITA — Researcher</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=IBM+Plex+Sans:wght@300;400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --bg:#0a0908;--bg1:#111009;--bg2:#18160f;
+  --border:#272318;--txt:#ddd8ce;--txt2:#8a8372;--txt3:#3d3a30;
+  --gold:#c8922a;--gold2:#7a5518;--gold3:#2a1e08;
+  --teal:#2a9d8f;--teal2:#1a5c54;
+}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--txt);font-family:'IBM Plex Sans',sans-serif;font-size:14px;line-height:1.7;}
+nav{display:flex;align-items:center;justify-content:space-between;padding:0 48px;height:56px;background:var(--bg);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;}
+.nav-brand{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:2px;color:var(--txt2);text-transform:uppercase;}
+.nav-links{display:flex;gap:36px;}
+.nav-links a{font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--txt2);text-decoration:none;transition:color .2s;}
+.nav-links a:hover{color:var(--gold);}
+.hero{padding:88px 48px 80px;border-bottom:1px solid var(--border);display:grid;grid-template-columns:1fr 360px;gap:72px;align-items:end;}
+.hero-pre{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);margin-bottom:22px;display:flex;align-items:center;gap:12px;}
+.hero-pre::before{content:'';display:block;width:28px;height:1px;background:var(--gold2);}
+.hero-name{font-family:'Playfair Display',serif;font-size:72px;line-height:1.0;letter-spacing:-2.5px;color:var(--txt);}
+.hero-name em{font-style:italic;color:var(--txt2);}
+.hero-desc{font-size:14px;font-weight:300;color:var(--txt2);line-height:1.8;max-width:560px;margin-top:26px;}
+.hero-desc strong{color:var(--txt);font-weight:500;}
+.hero-cta{display:flex;gap:12px;margin-top:40px;}
+.btn-primary{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:1.5px;text-transform:uppercase;padding:11px 22px;background:var(--gold3);color:var(--gold);border:1px solid var(--gold2);border-radius:2px;cursor:pointer;text-decoration:none;transition:background .2s;}
+.btn-primary:hover{background:#3a2a0a;}
+.btn-ghost{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:1.5px;text-transform:uppercase;padding:11px 22px;background:transparent;color:var(--txt2);border:1px solid var(--border);border-radius:2px;text-decoration:none;transition:all .2s;}
+.btn-ghost:hover{color:var(--txt);border-color:var(--txt3);}
+.hero-stats{display:grid;grid-template-columns:1fr 1fr;gap:1px;border:1px solid var(--border);border-radius:3px;overflow:hidden;margin-bottom:20px;}
+.hstat{background:var(--bg2);padding:22px;}
+.hstat-val{font-family:'Playfair Display',serif;font-size:40px;color:var(--txt);line-height:1;margin-bottom:4px;}
+.hstat-val span{font-size:20px;color:var(--gold);}
+.hstat-key{font-size:10px;text-transform:uppercase;letter-spacing:1px;color:var(--txt2);}
+.hero-affil{background:var(--bg2);border:1px solid var(--border);border-radius:3px;padding:18px 20px;}
+.affil-row{display:flex;justify-content:space-between;align-items:center;padding:6px 0;font-size:12px;}
+.affil-row:not(:last-child){border-bottom:1px solid var(--border);}
+.affil-label{color:var(--txt2);}
+.affil-val{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--txt);}
+.affil-val.gold{color:var(--gold);}
+section{padding:72px 48px;border-bottom:1px solid var(--border);}
+.section-eyebrow{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--txt3);margin-bottom:40px;display:flex;align-items:center;gap:16px;}
+.section-eyebrow::after{content:'';flex:1;height:1px;background:var(--border);}
+.research-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;}
+.rcard{background:var(--bg1);padding:36px;position:relative;overflow:hidden;}
+.rcard::after{content:'';position:absolute;top:0;left:0;right:0;height:3px;}
+.rcard.current::after{background:var(--gold);}
+.rcard.past::after{background:var(--teal2);}
+.rcard-label{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;margin-bottom:18px;}
+.rcard.current .rcard-label{color:var(--gold);}
+.rcard.past .rcard-label{color:var(--teal);}
+.rcard-title{font-family:'Playfair Display',serif;font-size:22px;color:var(--txt);margin-bottom:22px;line-height:1.3;}
+.rcard-items{list-style:none;display:flex;flex-direction:column;gap:9px;}
+.rcard-items li{font-size:12.5px;color:var(--txt2);padding-left:18px;position:relative;line-height:1.5;}
+.rcard-items li::before{content:'';position:absolute;left:0;top:9px;width:6px;height:1px;background:var(--txt3);}
+.rcard.current .rcard-items li.hi::before{background:var(--gold2);}
+.rcard.current .rcard-items li.hi{color:var(--txt);}
+.rcard-foot{margin-top:26px;padding-top:18px;border-top:1px solid var(--border);font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:1px;color:var(--txt3);}
+.pub-filter{display:flex;gap:2px;margin-bottom:44px;}
+.filt{font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:1px;text-transform:uppercase;padding:7px 16px;border:1px solid var(--border);background:transparent;color:var(--txt2);cursor:pointer;border-radius:2px;transition:all .15s;}
+.filt:hover{color:var(--txt);border-color:var(--txt3);}
+.filt.on{background:var(--gold3);color:var(--gold);border-color:var(--gold2);}
+.pub-entry{display:grid;grid-template-columns:88px 1fr;gap:36px;padding:32px 0;border-bottom:1px solid var(--border);}
+.pub-entry:first-of-type{border-top:1px solid var(--border);}
+.pub-entry.hidden{display:none;}
+.pub-left{padding-top:4px;}
+.pub-year-big{font-family:'Playfair Display',serif;font-size:26px;color:var(--txt3);line-height:1;margin-bottom:8px;}
+.pub-venue-badge{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:1px;text-transform:uppercase;color:var(--gold);line-height:1.6;}
+.pub-title-main{font-family:'Playfair Display',serif;font-size:18px;color:var(--txt);line-height:1.4;margin-bottom:8px;}
+.pub-authors{font-size:12px;color:var(--txt2);margin-bottom:12px;line-height:1.5;}
+.pub-authors em{color:var(--txt);font-style:normal;font-weight:500;}
+.pub-abstract{font-size:12px;color:var(--txt2);line-height:1.8;margin-bottom:16px;max-width:600px;}
+.pub-links{display:flex;gap:8px;flex-wrap:wrap;}
+.pub-link{font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:0.5px;padding:4px 12px;border:1px solid var(--border);border-radius:2px;color:var(--txt2);text-decoration:none;transition:all .15s;}
+.pub-link:hover{color:var(--txt);border-color:var(--txt3);}
+.pub-link.paper{color:var(--gold);border-color:var(--gold2);background:var(--gold3);}
+.pub-link.stars{color:#c9983a;}
+.stack-cols{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;}
+.sg-title{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--txt3);margin-bottom:16px;padding-bottom:10px;border-bottom:1px solid var(--border);}
+.sg-items{display:flex;flex-direction:column;gap:1px;}
+.sg-item{font-size:12.5px;color:var(--txt2);padding:9px 0;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:10px;}
+.sg-item:last-child{border-bottom:none;}
+.sg-item.primary{color:var(--txt);}
+.sg-dot{width:5px;height:5px;border-radius:50%;background:var(--txt3);flex-shrink:0;}
+.sg-item.primary .sg-dot{background:var(--gold2);}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;}
+.contact-block{background:var(--bg2);padding:40px;}
+.cb-num{font-family:'Playfair Display',serif;font-size:56px;color:var(--border);line-height:1;margin-bottom:22px;}
+.cb-title{font-family:'Playfair Display',serif;font-style:italic;font-size:20px;color:var(--txt);margin-bottom:14px;line-height:1.4;}
+.cb-body{font-size:13px;color:var(--txt2);line-height:1.8;margin-bottom:22px;}
+.cb-link{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:1px;color:var(--gold);text-decoration:none;display:block;margin-bottom:8px;}
+.cb-link:hover{text-decoration:underline;}
+.topics-list{list-style:none;display:flex;flex-direction:column;gap:10px;}
+.topics-list li{font-size:12.5px;color:var(--txt2);padding-left:18px;position:relative;}
+.topics-list li::before{content:'';position:absolute;left:0;top:9px;width:7px;height:1px;background:var(--gold2);}
+footer{padding:32px 48px;display:flex;justify-content:space-between;align-items:center;}
+.foot-left,.foot-right{font-family:'IBM Plex Mono',monospace;font-size:9.5px;color:var(--txt3);letter-spacing:1px;}
+</style>
+</head>
+<body>
+
+<nav>
+  <span class="nav-brand">MK · Researcher</span>
+  <div class="nav-links">
+    <a href="#research">Research</a>
+    <a href="#publications">Publications</a>
+    <a href="#stack">Stack</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <div>
+    <div class="hero-pre">PostDoc Researcher · LAMIH, UPHF</div>
+    <div class="hero-name">Mamadou<br><em>KEITA</em></div>
+    <p class="hero-desc">
+      Working on <strong>battery state of health estimation</strong> using deep learning at LAMIH.
+      Former PhD on <strong>AI-generated image detection</strong> via vision-language models —
+      publications at ICASSP 2024, ICPR 2024, and ACM MM 2025.
+    </p>
+    <div class="hero-cta">
+      <a class="btn-primary" href="https://scholar.google.com/citations?user=7D_aALIAAAAJ">Google Scholar</a>
+      <a class="btn-ghost" href="https://linkedin.com/in/mamadou-keita98">LinkedIn</a>
+      <a class="btn-ghost" href="mailto:mamadou.keita@uphf.fr">Contact</a>
+    </div>
+  </div>
+  <div>
+    <div class="hero-stats">
+      <div class="hstat"><div class="hstat-val">158<span>+</span></div><div class="hstat-key">Citations</div></div>
+      <div class="hstat"><div class="hstat-val">6<span>+</span></div><div class="hstat-key">Publications</div></div>
+      <div class="hstat"><div class="hstat-val">55<span>+</span></div><div class="hstat-key">GitHub Stars</div></div>
+      <div class="hstat"><div class="hstat-val">4</div><div class="hstat-key">Int'l Venues</div></div>
+    </div>
+    <div class="hero-affil">
+      <div class="affil-row"><span class="affil-label">Position</span><span class="affil-val gold">PostDoc</span></div>
+      <div class="affil-row"><span class="affil-label">Laboratory</span><span class="affil-val">LAMIH UMR CNRS 8201</span></div>
+      <div class="affil-row"><span class="affil-label">University</span><span class="affil-val">UPHF</span></div>
+      <div class="affil-row"><span class="affil-label">Location</span><span class="affil-val">Valenciennes, France</span></div>
+    </div>
+  </div>
+</div>
+
+<section id="research">
+  <div class="section-eyebrow">Research</div>
+  <div class="research-grid">
+    <div class="rcard current">
+      <div class="rcard-label">Current — PostDoc</div>
+      <div class="rcard-title">Battery State of Health Estimation</div>
+      <ul class="rcard-items">
+        <li class="hi">SOH estimation via deep learning</li>
+        <li class="hi">Predictive maintenance & diagnostics</li>
+        <li>Degradation modeling & time-series</li>
+        <li>Data-driven battery prognostics</li>
+        <li>Physics-informed neural networks</li>
+      </ul>
+      <div class="rcard-foot">LAMIH UMR CNRS 8201 · UPHF · Valenciennes</div>
+    </div>
+    <div class="rcard past">
+      <div class="rcard-label">PhD Thesis</div>
+      <div class="rcard-title">AI-Generated Image Forensics</div>
+      <ul class="rcard-items">
+        <li>Deepfake & synthetic image detection</li>
+        <li>Vision-language models (CLIP, LLaVA)</li>
+        <li>Retrieval-augmented generation (RAG)</li>
+        <li>Fake image attribution & tracing</li>
+        <li>Multimodal deep learning</li>
+      </ul>
+      <div class="rcard-foot">DOMUS / IEMN · UPHF · Valenciennes</div>
+    </div>
+  </div>
+</section>
+
+<section id="publications">
+  <div class="section-eyebrow">Publications</div>
+  <div class="pub-filter">
+    <button class="filt on" onclick="filterPubs('all',this)">All</button>
+    <button class="filt" onclick="filterPubs('conf',this)">Conferences</button>
+    <button class="filt" onclick="filterPubs('journal',this)">Journals</button>
+  </div>
+
+  <div class="pub-entry" data-type="conf">
+    <div class="pub-left"><div class="pub-year-big">2025</div><div class="pub-venue-badge">ACIVS<br>2025</div></div>
+    <div class="pub-right">
+      <div class="pub-title-main">DeeCLIP: A Robust and Generalizable Transformer-Based Framework for Detecting AI-Generated Images</div>
+      <div class="pub-authors"><em>M. Keita</em>, W. Hamidouche, H. Bougueffa Eutamene, A. Taleb-Ahmed, A. Hadid</div>
+      <div class="pub-abstract">DeeCLIP integrates CLIP-ViT with LoRA fine-tuning and a custom fusion module (DeeFuser) to robustly detect AI-generated images across unknown generative models and common degradations.</div>
+      <div class="pub-links">
+        <a class="pub-link paper" href="https://arxiv.org/abs/2504.19876">arXiv:2504.19876</a>
+        <a class="pub-link" href="https://github.com/Mamadou-Keita/DeeCLIP">GitHub</a>
+        <span class="pub-link stars">★ 14</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="pub-entry" data-type="conf">
+    <div class="pub-left"><div class="pub-year-big">2025</div><div class="pub-venue-badge">ACM MM<br>DFF</div></div>
+    <div class="pub-right">
+      <div class="pub-title-main">REVEAL: A Retrieval-Augmented Generation Approach for Contextual Identification of Synthetic Visual Content</div>
+      <div class="pub-authors"><em>M. Keita</em>, W. Hamidouche, H. Bougueffa Eutamene, A. Taleb-Ahmed, A. Hadid</div>
+      <div class="pub-abstract">REVEAL leverages visual RAG and majority voting to overcome the generalization limits of existing synthetic image detectors against unseen generative models and degraded conditions.</div>
+      <div class="pub-links"><a class="pub-link paper" href="https://dl.acm.org/doi/10.1145/3746265.3759667">ACM DL</a></div>
+    </div>
+  </div>
+
+  <div class="pub-entry" data-type="conf">
+    <div class="pub-left"><div class="pub-year-big">2024</div><div class="pub-venue-badge">ICASSP<br>2024</div></div>
+    <div class="pub-right">
+      <div class="pub-title-main">Harnessing the Power of Large Vision Language Models for Synthetic Image Detection</div>
+      <div class="pub-authors"><em>M. Keita</em>, W. Hamidouche, H. Bougueffa Eutamene, A. Taleb-Ahmed</div>
+      <div class="pub-abstract">Explores LVLMs as zero-shot and few-shot detectors of synthetic images, demonstrating strong generalization across GAN and diffusion-based generators without task-specific training.</div>
+      <div class="pub-links">
+        <a class="pub-link paper" href="#">IEEE</a>
+        <a class="pub-link" href="https://github.com/Mamadou-Keita/VLM-DETECT">GitHub</a>
+        <span class="pub-link stars">★ 34</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="pub-entry" data-type="journal">
+    <div class="pub-left"><div class="pub-year-big">2024</div><div class="pub-venue-badge">Expert<br>Systems</div></div>
+    <div class="pub-right">
+      <div class="pub-title-main">Bi-LORA: A Vision-Language Approach for Synthetic Image Detection</div>
+      <div class="pub-authors"><em>M. Keita</em>, W. Hamidouche, H. Bougueffa Eutamene, A. Taleb-Ahmed</div>
+      <div class="pub-abstract">Bi-LORA combines VLMs with low-rank adaptation (LoRA) tuning to enhance precision on unseen model-generated images, addressing the generalization gap in binary synthetic image classification.</div>
+      <div class="pub-links"><a class="pub-link paper" href="#">Elsevier</a></div>
+    </div>
+  </div>
+
+  <div class="pub-entry" data-type="conf">
+    <div class="pub-left"><div class="pub-year-big">2024</div><div class="pub-venue-badge">ICPR<br>2024</div></div>
+    <div class="pub-right">
+      <div class="pub-title-main">FIDAVL: Fake Image Detection and Attribution Using Vision-Language Model</div>
+      <div class="pub-authors"><em>M. Keita</em>, W. Hamidouche, H. Bougueffa Eutamene, A. Taleb-Ahmed, A. Hadid</div>
+      <div class="pub-abstract">FIDAVL goes beyond detection to attribute fake images to their generative source, leveraging VLM representations for joint detection and attribution in a unified framework.</div>
+      <div class="pub-links">
+        <a class="pub-link paper" href="#">Springer</a>
+        <a class="pub-link" href="https://github.com/Mamadou-Keita/FIDAVL">GitHub</a>
+        <span class="pub-link stars">★ 4</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="pub-entry" data-type="conf">
+    <div class="pub-left"><div class="pub-year-big">2021</div><div class="pub-venue-badge">EUVIP<br>2021</div></div>
+    <div class="pub-right">
+      <div class="pub-title-main">Visual Security Evaluation of Perceptually Encrypted Images Based on Multi-Task Learning</div>
+      <div class="pub-authors">S. A. Fezza, <em>M. Keita</em>, W. Hamidouche, O. Déforges</div>
+      <div class="pub-abstract">VSMML proposes a no-reference visual security metric for perceptually encrypted images using multi-output deep learning, outperforming state-of-the-art on visual security and quality tasks.</div>
+      <div class="pub-links">
+        <a class="pub-link paper" href="#">IEEE</a>
+        <a class="pub-link" href="https://github.com/Mamadou-Keita/VSMML">GitHub</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="stack">
+  <div class="section-eyebrow">Technical Stack</div>
+  <div class="stack-cols">
+    <div>
+      <div class="sg-title">Deep Learning & AI</div>
+      <div class="sg-items">
+        <div class="sg-item primary"><span class="sg-dot"></span>PyTorch</div>
+        <div class="sg-item primary"><span class="sg-dot"></span>HuggingFace</div>
+        <div class="sg-item primary"><span class="sg-dot"></span>CLIP</div>
+        <div class="sg-item"><span class="sg-dot"></span>TensorFlow</div>
+        <div class="sg-item"><span class="sg-dot"></span>Keras</div>
+        <div class="sg-item"><span class="sg-dot"></span>OpenCV</div>
+        <div class="sg-item"><span class="sg-dot"></span>scikit-learn</div>
+      </div>
+    </div>
+    <div>
+      <div class="sg-title">Languages</div>
+      <div class="sg-items">
+        <div class="sg-item primary"><span class="sg-dot"></span>Python</div>
+        <div class="sg-item"><span class="sg-dot"></span>JavaScript / TypeScript</div>
+        <div class="sg-item"><span class="sg-dot"></span>Java</div>
+        <div class="sg-item"><span class="sg-dot"></span>C</div>
+        <div class="sg-item"><span class="sg-dot"></span>LaTeX</div>
+      </div>
+    </div>
+    <div>
+      <div class="sg-title">Data & Tools</div>
+      <div class="sg-items">
+        <div class="sg-item"><span class="sg-dot"></span>NumPy / Pandas</div>
+        <div class="sg-item"><span class="sg-dot"></span>Matplotlib</div>
+        <div class="sg-item"><span class="sg-dot"></span>React</div>
+        <div class="sg-item"><span class="sg-dot"></span>Node.js</div>
+        <div class="sg-item"><span class="sg-dot"></span>PostgreSQL</div>
+        <div class="sg-item"><span class="sg-dot"></span>MongoDB</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="section-eyebrow">Contact & Collaboration</div>
+  <div class="contact-grid">
+    <div class="contact-block">
+      <div class="cb-num">01</div>
+      <div class="cb-title">Get in touch</div>
+      <div class="cb-body">Open to research collaborations, visiting positions, and industrial partnerships in AI and battery diagnostics.</div>
+      <a class="cb-link" href="mailto:mamadou.keita@uphf.fr">mamadou.keita@uphf.fr</a>
+      <a class="cb-link" href="https://linkedin.com/in/mamadou-keita98">linkedin.com/in/mamadou-keita98</a>
+      <a class="cb-link" href="https://scholar.google.com/citations?user=7D_aALIAAAAJ">Google Scholar Profile</a>
+    </div>
+    <div class="contact-block">
+      <div class="cb-num">02</div>
+      <div class="cb-title">Topics of interest</div>
+      <ul class="topics-list">
+        <li>Battery SOH estimation & predictive maintenance</li>
+        <li>AI-generated content detection & attribution</li>
+        <li>Vision-language models for forensics</li>
+        <li>Trustworthy & robust AI systems</li>
+        <li>Physics-informed deep learning</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <span class="foot-left">Mamadou KEITA · LAMIH, UPHF · Valenciennes</span>
+  <span class="foot-right">"Technology and Innovation to serve People"</span>
+</footer>
+
+<script>
+function filterPubs(type,btn){
+  document.querySelectorAll('.filt').forEach(b=>b.classList.remove('on'));
+  btn.classList.add('on');
+  document.querySelectorAll('.pub-entry').forEach(e=>{
+    (type==='all'||e.dataset.type===type)?e.classList.remove('hidden'):e.classList.add('hidden');
+  });
+}
+</script>
+</body>
+</html>
